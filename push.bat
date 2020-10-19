@@ -1,1 +1,1 @@
-git add . && git commit -m "auto commit muggle" && git subtree push -P _book origin view
+git add . && git commit -m "auto commit muggle" && git push && git subtree push -P _book origin view
