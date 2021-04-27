@@ -1,18 +1,72 @@
-##  psf 模块划分
 
-- psf-util
-- psf-log
-- psf-common
-- psf-security
-- psf-api-gateway
-- psf-xxl-job
-- psf-minio
-- psf-cloud-parent
-- psf-cloud-starter
-- psf-mybatis-plus
-- psf-generator
-- psf-limiting
-- psf-txlcn
+# 1. psf 规范
 
-ALTER TABLE `ioc_wall_chart`.`tb_wall_project`   
-  ADD COLUMN `district` VARCHAR(50) DEFAULT ''  NOT NULL   COMMENT '项目所属区划' AFTER `deleted`;
+idea 需下载插件 snarlint 、checkstyle 、save actions 三个插件辅助代码去除异味 
+
+## 1.1 分支管理规范
+
+代码分支管理遵从git flow 规范
+
+master 分支保证是最新最稳定的代码，develop 用于开发环境部署。
+
+迭代流程
+
+master 拉分支 feature/版本号 -》 开发完成-》合并到dev分支测试 -》自测联调完成-》feature 分支升级为 release分支测试验收-》验收有bug 拉hotfix
+
+分支修复-》 修复完成，可以发版合并到master 并发版。
+
+
+注意代码合并方向，feature可以合并到dev dev不可以合并到feature master 可以合并到dev dev 不可以合并到master；
+master 用于下载运行，release分支是待发布分支，当完全验证结束后应该合并到master分支，develop 用于测试
+
+## 1.2 代码规范
+
+在doc 文档中有一个 `myCodeStyle.xml` 的文件，通过checkStyle 插件配置上该文件，每次commit 之前应该通过checkStyle 去除代码异味。
+
+在idea 插件中搜索checkstyle-idea,重启后在settings-tools-checkstyle 中配置，注意选择版本号未8.10以下。
+
+checkstyle 的具体用法可百度学习。
+
+该插件的目的是为了统一代码风格和提高代码的工整性；
+
+代码风格统一的理想状态是，在团队内读别人的代码和读自己的代码是无差别的。
+
+特别提出几点：
+
+1. 不要使用 System.out.print 和 printStackTrace 输出日志认
+2. 不要使用无意义的换行和空格
+3. 代码长度过长应该换行
+4. 测试代码不要出现在source 文件夹中
+
+## 1.3 commit 规范
+遵从 git-commit Angular 规范
+
+# 2. 资源说明
+docker 仓库地址
+maven 仓库地址
+
+# 3. 组件划分
+
+## 3.1 psf-code-generator
+
+## 3.2 psf-api-gateway
+
+## 3.3 psf-auth-center
+
+## 3.4 psf-cloud-starter
+
+## psf-log-center
+
+## psf-xxl-job
+
+## psf-transactional
+
+# 4. devOps
+
+# 5. 结合openspug
+
+
+
+# 6.组件化开发建议
+
+项目组件化
