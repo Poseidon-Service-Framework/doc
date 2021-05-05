@@ -109,5 +109,5 @@ psf 做的事情就是，将所有非业务的功能组件化，成为一些独�
 
 ## 6.2 psf paas 平台架构图
 
-![](D:\workspace\java\github\psf\doc\psf 架构图.jpg)
+![](psf 架构图.jpg)
 
